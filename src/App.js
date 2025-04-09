@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import SearchBar from './components/SearchBar';
 import SearchResults from './components/SearchResults';
 import Playlist from './components/Playlist';
+import './App.css';
 
 function App() {
   const [searchTerm, setSearchTerm] = useState('');
@@ -44,9 +45,18 @@ function App() {
   return (
     <div className="App">
       <h1>Jammming 🎧</h1>
-      <SearchBar searchTerm={searchTerm} setSearchTerm={setSearchTerm} />
-      <SearchResults tracks={filteredTracks} onAdd={addTrack} />
-      <Playlist playlistName={playlistName} playlistTracks={playlistTracks}/>
+      <SearchBar
+        searchTerm={searchTerm}
+        setSearchTerm={setSearchTerm}
+      />
+      <div className="MainContainer">
+        <SearchResults tracks={filteredTracks} onAdd={addTrack} />
+        <Playlist
+          playlistName={playlistName}
+          setPlaylistName={setPlaylistName}
+          playlistTracks={playlistTracks}
+        />
+      </div>
     </div>
 
     
