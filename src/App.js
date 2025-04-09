@@ -13,21 +13,25 @@ function App() {
       id: 1,
       name: "Blinding Lights",
       artist: "The Weeknd",
-      album: "After Hours"
+      album: "After Hours",
+      uri: "spotify:track:123abc"
     },
     {
       id: 2,
       name: "Levitating",
       artist: "Dua Lipa",
-      album: "Future Nostalgia"
+      album: "Future Nostalgia",
+      uri: "spotify:track:456def"
     },
     {
       id: 3,
       name: "Peaches",
       artist: "Justin Bieber",
-      album: "Justice"
+      album: "Justice",
+      uri: "spotify:track:789ghi"
     }
   ];
+  
 
   const filteredTracks = mockTracks.filter(track =>
     track.name.toLowerCase().includes(searchTerm.toLowerCase()) ||
@@ -46,9 +50,19 @@ function App() {
     setPlaylistTracks(prev => prev.filter(t => t.id !== track.id));
   };
 
+
+  const savePlaylist = () => {
+    const trackUris = playlistTracks.map(track => track.uri);
+    console.log("Saving to Spotify:", playlistName, trackUris);
+  
+    // Resetar o estado
+    setPlaylistName("Nova Playlist");
+    setPlaylistTracks([]);
+  };
+
   return (
     <div className="App">
-      <h1>Jammming 🎧</h1>
+      <h1>Jammming</h1>
       <SearchBar
         searchTerm={searchTerm}
         setSearchTerm={setSearchTerm}
@@ -60,6 +74,7 @@ function App() {
           setPlaylistName={setPlaylistName}
           playlistTracks={playlistTracks}
           onRemove={removeTrack}
+          onSave={savePlaylist}
         />
       </div>
     </div>
