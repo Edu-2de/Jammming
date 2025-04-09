@@ -34,11 +34,18 @@ function App() {
     track.album.toLowerCase().includes(searchTerm.toLowerCase())
   );
 
+  const addTrack = (track) => {
+    if (playlistTracks.find(savedTrack => savedTrack.id === track.id)) {
+      return; // Já está na playlist
+    }
+    setPlaylistTracks(prev => [...prev, track]);
+  };
+
   return (
     <div className="App">
       <h1>Jammming 🎧</h1>
       <SearchBar searchTerm={searchTerm} setSearchTerm={setSearchTerm} />
-      <SearchResults tracks={filteredTracks} />
+      <SearchResults tracks={filteredTracks} onAdd={addTrack} />
       <Playlist playlistName={playlistName} playlistTracks={playlistTracks}/>
     </div>
 
