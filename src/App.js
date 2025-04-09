@@ -1,23 +1,42 @@
-import logo from './logo.svg';
-import './App.css';
+import React, { useState } from 'react';
+import SearchBar from './components/SearchBar';
+import SearchResults from './components/SearchResults';
 
 function App() {
+  const [searchTerm, setSearchTerm] = useState('');
+
+  const mockTracks = [
+    {
+      id: 1,
+      name: "Blinding Lights",
+      artist: "The Weeknd",
+      album: "After Hours"
+    },
+    {
+      id: 2,
+      name: "Levitating",
+      artist: "Dua Lipa",
+      album: "Future Nostalgia"
+    },
+    {
+      id: 3,
+      name: "Peaches",
+      artist: "Justin Bieber",
+      album: "Justice"
+    }
+  ];
+
+  const filteredTracks = mockTracks.filter(track =>
+    track.name.toLowerCase().includes(searchTerm.toLowerCase()) ||
+    track.artist.toLowerCase().includes(searchTerm.toLowerCase()) ||
+    track.album.toLowerCase().includes(searchTerm.toLowerCase())
+  );
+
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <h1>Jammming 🎧</h1>
+      <SearchBar searchTerm={searchTerm} setSearchTerm={setSearchTerm} />
+      <SearchResults tracks={filteredTracks} />
     </div>
   );
 }
