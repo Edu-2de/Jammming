@@ -1,7 +1,7 @@
 import React from 'react';
 import Track from './Track';
 
-function TrackList({ tracks, onAdd, isRemoval }) {
+function TrackList({ tracks, onAdd, isRemoval, onRemove }) {
   return (
     <div className="TrackList">
       {tracks.map(track => (
@@ -9,6 +9,7 @@ function TrackList({ tracks, onAdd, isRemoval }) {
           key={track.id}
           track={track}
           onAdd={onAdd}
+          onRemove={onRemove}
           isRemoval={isRemoval}
         />
       ))}
