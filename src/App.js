@@ -1,10 +1,12 @@
 import React, { useState } from 'react';
 import SearchBar from './components/SearchBar';
 import SearchResults from './components/SearchResults';
+import Playlist from './components/Playlist';
 
 function App() {
   const [searchTerm, setSearchTerm] = useState('');
-
+  const [playlistName, setPlaylistName] = useState("New Playlist");
+  const [playlistTracks, setPlaylistTracks] = useState([]);
   const mockTracks = [
     {
       id: 1,
@@ -37,7 +39,10 @@ function App() {
       <h1>Jammming 🎧</h1>
       <SearchBar searchTerm={searchTerm} setSearchTerm={setSearchTerm} />
       <SearchResults tracks={filteredTracks} />
+      <Playlist playlistName={playlistName} playlistTracks={playlistTracks}/>
     </div>
+
+    
   );
 }
 
