@@ -1,23 +1,22 @@
-# 🎧 Jammming – Crie e salve playlists no Spotify com React.js
+# 🎧 Jammming – Create and Save Playlists to Spotify with React.js
 
-Jammming é uma aplicação web que permite aos usuários pesquisarem faixas musicais usando a API do Spotify, criarem playlists personalizadas e salvá-las diretamente em suas contas do Spotify.
+Jammming is a web application that allows users to search for music tracks using the Spotify API, build custom playlists, and save them directly to their Spotify accounts.
 
-## 🚀 Funcionalidades
+## Features
 
-- 🔍 Buscar músicas por nome, artista ou álbum
-- ➕ Adicionar músicas à playlist personalizada
-- ✏️ Renomear a playlist
-- ❌ Remover músicas da playlist
-- ✅ Salvar playlists na conta do Spotify
+- Search for tracks by song name, artist, or album
+- Add tracks to a personalized playlist
+- Rename the playlist
+- Remove tracks from the playlist
+- Save playlists to your Spotify account
 
-## 🛠 Tecnologias Utilizadas
+## Technologies Used
 
-- **React.js** – Criação da interface e gerenciamento de estado com Hooks
-- **JavaScript (ES6+)** – Lógica e manipulação de dados
-- **Spotify Web API** – Integração com dados e permissões de usuário
-- **CSS** – Estilização moderna e responsiva
+- **React.js** – UI creation and state management with Hooks
+- **JavaScript (ES6+)** – Logic and data manipulation
+- **Spotify Web API** – Integration with user data and Spotify services
+- **CSS** – Modern and responsive styling
 
-## 📦 Instalação
 
 
 
