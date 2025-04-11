@@ -1,6 +1,6 @@
 import React from 'react';
 
-function SearchBar({ searchTerm, setSearchTerm }) {
+function SearchBar({ searchTerm, setSearchTerm, onSearch }) {
   return (
     <div className="SearchBar">
       <input
@@ -9,10 +9,13 @@ function SearchBar({ searchTerm, setSearchTerm }) {
         value={searchTerm}
         onChange={(e) => setSearchTerm(e.target.value)}
       />
-      <button type="button">Search</button>
+      <button type="button" onClick={() => onSearch(searchTerm)}>
+        Search
+      </button>
     </div>
   );
 }
+
 
     
 export default SearchBar;
