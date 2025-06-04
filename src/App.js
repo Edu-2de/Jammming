@@ -8,7 +8,7 @@ import './App.css';
 function App() {
   const [searchTerm, setSearchTerm] = useState('');
   const [searchResults, setSearchResults] = useState([]);
-  const [playlistName, setPlaylistName] = useState('Nova Playlist');
+  const [playlistName, setPlaylistName] = useState('New Playlist');
   const [playlistTracks, setPlaylistTracks] = useState([]);
 
   const addTrack = (track) => {
@@ -23,7 +23,7 @@ function App() {
   const savePlaylist = async () => {
     const trackUris = playlistTracks.map(track => track.uri);
     await Spotify.savePlaylist(playlistName, trackUris);
-    setPlaylistName("Nova Playlist");
+    setPlaylistName("New Playlist");
     setPlaylistTracks([]);
   };
 
@@ -40,7 +40,7 @@ function App() {
     <div className="App">
       <header className="App-header">
         <h1>Jammming <span role="img" aria-label="headphone">🎧</span></h1>
-        <p>Monte sua playlist personalizada e salve direto no Spotify</p>
+        <p>Create your personalized playlist and save it directly to Spotify</p>
       </header>
       <main className="MainContainer">
         <SearchBar searchTerm={searchTerm} setSearchTerm={setSearchTerm} onSearch={handleSearch} />
@@ -56,7 +56,7 @@ function App() {
         </div>
       </main>
       <footer className="App-footer">
-        <p>Jammming &copy; 2025 - Criado com React & Spotify API</p>
+        <p>Jammming &copy; 2025 - Built with React & Spotify API</p>
       </footer>
     </div>
   );
